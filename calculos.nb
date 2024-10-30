@@ -1,0 +1,417 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     17004,        409]
+NotebookOptionsPosition[     16287,        388]
+NotebookOutlinePosition[     16689,        404]
+CellTagsIndexPosition[     16646,        401]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"g", "=", "9.81"}], ",", "x", ",", "y", ",", "tMax"}], "}"}], 
+      ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "[", "t_", "]"}], ":=", 
+        RowBox[{"v0", "*", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"theta", " ", "Degree"}], "]"}], "*", "t"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"y", "[", "t_", "]"}], ":=", 
+        RowBox[{"h0", "+", 
+         RowBox[{"v0", "*", 
+          RowBox[{"Sin", "[", 
+           RowBox[{"theta", " ", "Degree"}], "]"}], "*", "t"}], "-", 
+         RowBox[{"0.5", "*", "g", "*", 
+          RowBox[{"t", "^", "2"}]}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"tMax", "=", 
+        RowBox[{"Max", "[", 
+         RowBox[{
+          RowBox[{"NSolve", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"y", "[", "t", "]"}], "==", "0"}], "&&", 
+             RowBox[{"t", ">", "0"}]}], ",", "t"}], "]"}], "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "1", ",", "2"}], "]"}], "]"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"ParametricPlot", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"x", "[", "t", "]"}], ",", 
+           RowBox[{"y", "[", "t", "]"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "tMax"}], "}"}], ",", 
+         RowBox[{"PlotRange", "->", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", 
+              RowBox[{"Max", "[", 
+               RowBox[{"20", ",", 
+                RowBox[{"x", "[", "tMax", "]"}]}], "]"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", 
+              RowBox[{"Max", "[", 
+               RowBox[{"15", ",", 
+                RowBox[{"h0", "+", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"v0", "^", "2"}], "*", 
+                    RowBox[{
+                    RowBox[{"Sin", "[", 
+                    RowBox[{"theta", " ", "Degree"}], "]"}], "^", "2"}]}], 
+                   ")"}], "/", 
+                  RowBox[{"(", 
+                   RowBox[{"2", "*", "g"}], ")"}]}]}]}], "]"}]}], "}"}]}], 
+           "}"}]}], ",", 
+         RowBox[{"AxesLabel", "->", 
+          RowBox[{"{", 
+           RowBox[{"\"\<x (m)\>\"", ",", "\"\<y (m)\>\""}], "}"}]}], ",", 
+         RowBox[{"PlotLabel", "->", "\"\<Lanzamiento de proyecyil\>\""}], ",", 
+         RowBox[{"GridLines", "->", "Automatic"}]}], "]"}]}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"h0", ",", "10"}], "}"}], ",", "0", ",", "10", ",", "1", ",", 
+      RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"v0", ",", "10"}], "}"}], ",", "0", ",", "10", ",", "1", ",", 
+      RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"theta", ",", "45"}], "}"}], ",", "0", ",", "90", ",", "1", 
+      ",", 
+      RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}]}], "]"}], 
+  "\n"}]], "Input",
+ CellChangeTimes->{{3.9392900291763763`*^9, 3.939290150334322*^9}, {
+  3.939296426133049*^9, 3.939296447308428*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"a072d13d-84a6-a645-b0b2-79911210e79f"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h0$$ = 10, $CellContext`theta$$ = 
+    45, $CellContext`v0$$ = 10, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"sin t\[IAcute]tulo\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`h0$$], 10}, 0, 10, 1, ControlType -> Manipulator}, {{
+       Hold[$CellContext`v0$$], 10}, 0, 10, 1, ControlType -> Manipulator}, {{
+       Hold[$CellContext`theta$$], 45}, 0, 90, 1, ControlType -> 
+      Manipulator}}, Typeset`size$$ = {
+    360., {137.79968338077884`, 143.531616806332}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`h0$$ = 10, $CellContext`theta$$ = 
+        45, $CellContext`v0$$ = 10}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> 
+      Module[{$CellContext`g$ = 
+         9.81, $CellContext`x$, $CellContext`y$, $CellContext`tMax$}, \
+$CellContext`x$[
+           Pattern[$CellContext`t$, 
+            Blank[]]] := $CellContext`v0$$ 
+          Cos[$CellContext`theta$$ Degree] $CellContext`t$; $CellContext`y$[
+           Pattern[$CellContext`t$, 
+            Blank[]]] := $CellContext`h0$$ + $CellContext`v0$$ 
+           Sin[$CellContext`theta$$ Degree] $CellContext`t$ - 
+          0.5 $CellContext`g$ $CellContext`t$^2; $CellContext`tMax$ = Max[
+           Part[
+            NSolve[
+             
+             And[$CellContext`y$[$CellContext`t] == 0, $CellContext`t > 
+              0], $CellContext`t], All, 1, 2]]; ParametricPlot[{
+           $CellContext`x$[$CellContext`t], 
+           $CellContext`y$[$CellContext`t]}, {$CellContext`t, 
+           0, $CellContext`tMax$}, PlotRange -> {{0, 
+             Max[20, 
+              $CellContext`x$[$CellContext`tMax$]]}, {0, 
+             Max[
+             15, $CellContext`h0$$ + ($CellContext`v0$$^2 
+                Sin[$CellContext`theta$$ Degree]^2)/(2 $CellContext`g$)]}}, 
+          AxesLabel -> {"x (m)", "y (m)"}, PlotLabel -> 
+          "Lanzamiento de proyecyil", GridLines -> Automatic]], 
+      "Specifications" :> {{{$CellContext`h0$$, 10}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`v0$$, 10}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`theta$$, 45}, 0, 90, 1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{
+      405.9000000000001, {199.9705232245296, 205.70245665008275`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.939290029841221*^9, 3.939290043988329*^9}, {
+  3.939290083078205*^9, 3.9392900877670727`*^9}, {3.9392901227168427`*^9, 
+  3.939290150761091*^9}, {3.93929642679706*^9, 3.939296447829857*^9}},
+ CellLabel->"Out[3]=",ExpressionUUID->"aa35f7c2-d17b-8b48-8811-eb178cb1b1ee"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"g", "=", "9.81"}], ",", "v0", ",", "x", ",", "y", ",", 
+       "tMax"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"v0", "=", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"k", "*", 
+           RowBox[{"estiramiento", "^", "2"}]}], ")"}], "/", "m"}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"x", "[", "t_", "]"}], ":=", 
+       RowBox[{"v0", "*", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"theta", " ", "Degree"}], "]"}], "*", "t"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"y", "[", "t_", "]"}], ":=", 
+       RowBox[{"h0", "+", 
+        RowBox[{"v0", "*", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"theta", " ", "Degree"}], "]"}], "*", "t"}], "-", 
+        RowBox[{"0.5", "*", "g", "*", 
+         RowBox[{"t", "^", "2"}]}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"tMax", "=", 
+       RowBox[{"Max", "[", 
+        RowBox[{
+         RowBox[{"NSolve", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"y", "[", "t", "]"}], "==", "0"}], "&&", 
+            RowBox[{"t", ">", "0"}]}], ",", "t"}], "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "1", ",", "2"}], "]"}], "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ParametricPlot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], ",", 
+          RowBox[{"y", "[", "t", "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "0", ",", "tMax"}], "}"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{"Max", "[", 
+              RowBox[{"20", ",", 
+               RowBox[{"x", "[", "tMax", "]"}]}], "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{"Max", "[", 
+              RowBox[{"15", ",", 
+               RowBox[{"h0", "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"v0", "^", "2"}], "*", 
+                   RowBox[{
+                    RowBox[{"Sin", "[", 
+                    RowBox[{"theta", " ", "Degree"}], "]"}], "^", "2"}]}], 
+                  ")"}], "/", 
+                 RowBox[{"(", 
+                  RowBox[{"2", "*", "g"}], ")"}]}]}]}], "]"}]}], "}"}]}], 
+          "}"}]}], ",", 
+        RowBox[{"AxesLabel", "->", 
+         RowBox[{"{", 
+          RowBox[{"\"\<x (m)\>\"", ",", "\"\<y (m)\>\""}], "}"}]}], ",", 
+        RowBox[{
+        "PlotLabel", "->", 
+         "\"\<Lanzamiento Parab\[OAcute]lico con Resorte\>\""}], ",", 
+        RowBox[{"GridLines", "->", "Automatic"}]}], "]"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "100"}], "}"}], ",", "0", ",", "1000", ",", "1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"estiramiento", ",", "0.5"}], "}"}], ",", "0", ",", "1", ",", 
+     "0.01", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", "1"}], "}"}], ",", "0.1", ",", "10", ",", "0.1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h0", ",", "10"}], "}"}], ",", "0", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"theta", ",", "45"}], "}"}], ",", "0", ",", "90", ",", "1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}]}], " ", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.9392910379179573`*^9, 3.939291095100439*^9}, {
+  3.939291133730669*^9, 3.939291191964924*^9}, {3.9392964694857483`*^9, 
+  3.9392964714323196`*^9}, {3.9392965116044254`*^9, 3.9392965378493404`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"6add10ac-53f8-0e4a-920c-eedc8ca17aae"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`estiramiento$$ = 0.5, $CellContext`h0$$ = 
+    10, $CellContext`k$$ = 100, $CellContext`m$$ = 1, $CellContext`theta$$ = 
+    45, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"sin t\[IAcute]tulo\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`k$$], 100}, 0, 1000, 1, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`estiramiento$$], 0.5}, 0, 1, 0.01, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`m$$], 1}, 0.1, 10, 0.1, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`h0$$], 10}, 0, 10, 1, ControlType -> Manipulator}, {{
+       Hold[$CellContext`theta$$], 45}, 0, 90, 1, ControlType -> 
+      Manipulator}}, Typeset`size$$ = {
+    360., {137.79968338077884`, 143.531616806332}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`estiramiento$$ = 0.5, $CellContext`h0$$ = 
+        10, $CellContext`k$$ = 100, $CellContext`m$$ = 
+        1, $CellContext`theta$$ = 45}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> 
+      Module[{$CellContext`g$ = 
+         9.81, $CellContext`v0$, $CellContext`x$, $CellContext`y$, \
+$CellContext`tMax$}, $CellContext`v0$ = 
+         Sqrt[($CellContext`k$$ \
+$CellContext`estiramiento$$^2)/$CellContext`m$$]; $CellContext`x$[
+           Pattern[$CellContext`t$, 
+            Blank[]]] := $CellContext`v0$ 
+          Cos[$CellContext`theta$$ Degree] $CellContext`t$; $CellContext`y$[
+           Pattern[$CellContext`t$, 
+            Blank[]]] := $CellContext`h0$$ + $CellContext`v0$ 
+           Sin[$CellContext`theta$$ Degree] $CellContext`t$ - 
+          0.5 $CellContext`g$ $CellContext`t$^2; $CellContext`tMax$ = Max[
+           Part[
+            NSolve[
+             
+             And[$CellContext`y$[$CellContext`t] == 0, $CellContext`t > 
+              0], $CellContext`t], All, 1, 2]]; ParametricPlot[{
+           $CellContext`x$[$CellContext`t], 
+           $CellContext`y$[$CellContext`t]}, {$CellContext`t, 
+           0, $CellContext`tMax$}, PlotRange -> {{0, 
+             Max[20, 
+              $CellContext`x$[$CellContext`tMax$]]}, {0, 
+             Max[
+             15, $CellContext`h0$$ + ($CellContext`v0$^2 
+                Sin[$CellContext`theta$$ Degree]^2)/(2 $CellContext`g$)]}}, 
+          AxesLabel -> {"x (m)", "y (m)"}, PlotLabel -> 
+          "Lanzamiento Parab\[OAcute]lico con Resorte", GridLines -> 
+          Automatic]], 
+      "Specifications" :> {{{$CellContext`k$$, 100}, 0, 1000, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`estiramiento$$, 0.5}, 0, 1, 0.01, 
+         Appearance -> "Labeled"}, {{$CellContext`m$$, 1}, 0.1, 10, 0.1, 
+         Appearance -> "Labeled"}, {{$CellContext`h0$$, 10}, 0, 10, 1, 
+         Appearance -> "Labeled"}, {{$CellContext`theta$$, 45}, 0, 90, 1, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{
+      405.9000000000001, {220.81052322452956`, 226.54245665008273`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.9392910390312424`*^9, {3.939291126579624*^9, 3.9392911923241234`*^9}, 
+   3.9392964718600845`*^9, {3.9392965122678375`*^9, 3.9392965383447037`*^9}},
+ CellLabel->"Out[7]=",ExpressionUUID->"b066dacc-b27b-6e4c-aef8-04b37c2821f5"]
+}, Open  ]]
+},
+WindowSize->{1141.2, 573.6},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.1 para Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c0869247-ed29-e446-bb13-c41bc2e91c26"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 3538, 93, 240, "Input",ExpressionUUID->"a072d13d-84a6-a645-b0b2-79911210e79f"],
+Cell[4117, 117, 3644, 69, 422, "Output",ExpressionUUID->"aa35f7c2-d17b-8b48-8811-eb178cb1b1ee"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7798, 191, 4236, 112, 289, "Input",ExpressionUUID->"6add10ac-53f8-0e4a-920c-eedc8ca17aae"],
+Cell[12037, 305, 4234, 80, 464, "Output",ExpressionUUID->"b066dacc-b27b-6e4c-aef8-04b37c2821f5"]
+}, Open  ]]
+}
+]
+*)
+

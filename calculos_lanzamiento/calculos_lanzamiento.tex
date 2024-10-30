@@ -1,0 +1,49 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{setspace}
+
+\geometry{
+    a4paper,
+    left=2.54cm,
+    right=2.54cm,
+    top=2.54cm,
+    bottom=2.54cm
+}
+
+\doublespacing
+\begin{document}
+\section{Cálculos}
+\subsection{Tiempo de vuelo}
+\[
+T = \frac{v \sin(\theta) + \sqrt{(v \sin(\theta))^2 + 2gh}}{g}
+\]
+\[
+T = \frac{10 \cdot \sin(45) + \sqrt{(10 \cdot \sin(45))^2 + 2 \cdot 9.8 \cdot 1}}{9.8}
+\]
+\[
+T = 1.57
+\]
+\subsection{Alcance}
+\[
+R = v \cos(\theta) \cdot t
+\]
+\[
+R = 10 \cdot \cos(45) \cdot 1.57
+\]
+\[
+R = 11.12
+\]
+\subsection{Altura máxima}
+\[
+h_{\text{max}} = h + \frac{v^2 \sin^2(\theta)}{2g}
+\]
+\[
+h_{\text{max}} = 1 + \frac{10^2 \cdot \sin^2(45)}{2 \cdot 9.8}
+\]
+\[
+h_{\text{max}} = 3.55
+\]
+\end{document}
